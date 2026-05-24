@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile — GraphQL Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="logo-mark">⬡</span>
+      <span class="nav-title">GraphQL Profile</span>
+    </div>
+    <div class="nav-right">
+      <span class="nav-user" id="navUsername">—</span>
+      <button id="logoutBtn" class="btn-logout">Sign out</button>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="profile-layout">
+
+    <!-- HERO CARD -->
+    <section class="hero-card" aria-label="User identification">
+      <div class="avatar" id="userAvatar">?</div>
+      <div class="hero-info">
+        <h1 id="heroName">Loading…</h1>
+        <p id="heroLogin" class="mono">—</p>
+        <p id="heroCampus" class="campus-tag">—</p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-pill">
+          <span class="stat-val" id="statXP">—</span>
+          <span class="stat-lbl">Total XP</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-val" id="statLevel">—</span>
+          <span class="stat-lbl">Level</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-val" id="statAuditRatio">—</span>
+          <span class="stat-lbl">Audit Ratio</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID: Info + Charts -->
+    <div class="dashboard-grid">
+
+      <!-- RECENT PROJECTS -->
+      <section class="card" aria-label="Recent projects">
+        <h2 class="card-title">Recent Projects</h2>
+        <ul id="recentProjects" class="project-list">
+          <li class="skeleton-row"></li>
+          <li class="skeleton-row"></li>
+          <li class="skeleton-row"></li>
+        </ul>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="card" aria-label="Skills">
+        <h2 class="card-title">Top Skills</h2>
+        <div id="skillsList" class="skills-list">
+          <div class="skeleton-row"></div>
+          <div class="skeleton-row"></div>
+        </div>
+      </section>
+
+      <!-- CHART: XP Timeline -->
+      <section class="card card-wide" aria-label="XP timeline">
+        <h2 class="card-title">XP Progress Over Time</h2>
+        <svg id="xp-chart" viewBox="0 0 800 300" width="100%" preserveAspectRatio="xMidYMid meet" aria-label="XP timeline chart"></svg>
+      </section>
+
+      <!-- CHART: Pass / Fail donut -->
+      <section class="card card-half" aria-label="Pass vs Fail ratio">
+        <h2 class="card-title">Pass / Fail Ratio</h2>
+        <svg id="passFailSvg" viewBox="0 0 300 300" width="100%" preserveAspectRatio="xMidYMid meet" aria-label="Pass vs Fail donut chart"></svg>
+      </section>
+
+      <!-- CHART: Audit bar -->
+      <section class="card card-half" aria-label="Audit up vs down">
+        <h2 class="card-title">Audit Ratio</h2>
+        <svg id="auditBarSvg" viewBox="0 0 480 160" width="100%" preserveAspectRatio="xMidYMid meet" aria-label="Audit up vs down bar chart"></svg>
+      </section>
+
+      <!-- CHART: Piscine attempts -->
+      <!-- <section class="card card-wide" aria-label="Piscine attempts">
+        <h2 class="card-title">Piscine Attempts per Exercise</h2>
+        <svg id="piscineAttemptsSvg" viewBox="0 0 800 400" width="100%" preserveAspectRatio="xMidYMid meet" aria-label="Piscine attempts bar chart"></svg>
+      </section> -->
+
+    </div>
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>
