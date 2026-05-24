@@ -50,7 +50,7 @@ function decodeJwt(token) {
  */
 function requireAuth() {
   if (!getToken()) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 }
 
